@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import socket
 from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor
@@ -16,10 +17,8 @@ def grab_banner(host: str, port: int, timeout: float = 2.0) -> str | None:
     try:
         with socket.create_connection((host, port), timeout=timeout) as s:
             s.settimeout(timeout)
-            try:
+            with contextlib.suppress(OSError):
                 s.sendall(_CRLF)
-            except OSError:
-                pass  # some services just close on unexpected input
             data = s.recv(1024)
             return data.decode(errors="ignore").strip() or None
     except OSError:

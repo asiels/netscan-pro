@@ -15,6 +15,7 @@ Benchmark on loopback (1000 ports): threads ~3.2s, this engine ~0.9s.
 from __future__ import annotations
 
 import asyncio
+import contextlib
 from collections.abc import Iterable
 
 
@@ -30,10 +31,8 @@ async def _probe(host: str, port: int, timeout: float, sem: asyncio.Semaphore) -
         finally:
             if writer is not None:
                 writer.close()
-                try:
+                with contextlib.suppress(OSError):
                     await writer.wait_closed()
-                except OSError:
-                    pass  # some stacks RST the close -- irrelevant for scanning
 
 
 async def scan_async(
