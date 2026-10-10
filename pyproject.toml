@@ -49,8 +49,15 @@ target-version = "py39"
 select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4"]
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.10"
 ignore_missing_imports = true
+
+# scapy.all builds its namespace dynamically at runtime, so mypy cannot
+# resolve attributes like IP/TCP/ICMP on it. Silence only that error code,
+# only in the two modules that touch scapy.
+[[tool.mypy.overrides]]
+module = ["netscan.portscan", "netscan.fingerprint"]
+disable_error_code = ["attr-defined"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -141,7 +141,11 @@ def main() -> None:
 
     if args.nvd:
         console.rule("[bold cyan]NVD Enrichment[/]")
-        asyncio.run(asyncio.gather(*(enrich_with_nvd(r, args.nvd_api_key) for r in results)))
+
+        async def _enrich_all() -> None:
+            await asyncio.gather(*(enrich_with_nvd(r, args.nvd_api_key) for r in results))
+
+        asyncio.run(_enrich_all())
 
     if args.report == "table":
         print_table(results)
