@@ -1,9 +1,9 @@
 # NetScan Pro 🔍
 
-![CI](https://github.com/<your-username>/netscan-pro/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/asiels/netscan-pro/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Coverage](https://codecov.io/gh/<your-username>/netscan-pro/branch/main/graph/badge.svg)
+![Coverage](https://codecov.io/gh/asiels/netscan-pro/branch/main/graph/badge.svg)
 
 A **modular, async-first network scanner** for defensive security audits —
 built with production-grade engineering: pluggable engines, typed models,
@@ -27,7 +27,7 @@ CI/CD, and a real vulnerability-intelligence pipeline (local DB + NVD API).
 ## Quick Start
 
 ```bash
-git clone https://github.com/<your-username>/netscan-pro.git
+git clone https://github.com/asiels/netscan-pro.git
 cd netscan-pro
 pip install -e ".[dev]"        # installs `netscan` command + dev tools
 pre-commit install             # lint hooks before every commit

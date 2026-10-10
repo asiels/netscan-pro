@@ -9,7 +9,7 @@ description = "Modular, async-first network scanner for defensive security audit
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [{ name = "asiels", email = "ayushrananonu@gmail.com" }]
 keywords = ["security", "network", "scanner", "port-scanner", "asyncio"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -35,8 +35,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/<your-username>/netscan-pro"
-Repository = "https://github.com/<your-username>/netscan-pro"
+Homepage = "https://github.com/asiels/netscan-pro"
+Repository = "https://github.com/asiels/netscan-pro"
 
 [project.scripts]
 netscan = "netscan.cli:main"
