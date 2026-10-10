@@ -1,4 +1,5 @@
 """Scan engines: classic threaded TCP connect, stealth SYN, async (core)."""
+
 from __future__ import annotations
 
 import socket

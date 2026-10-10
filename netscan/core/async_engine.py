@@ -11,6 +11,7 @@ Why asyncio instead of threads (design decision, worth knowing for interviews):
 
 Benchmark on loopback (1000 ports): threads ~3.2s, this engine ~0.9s.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -22,9 +23,7 @@ async def _probe(host: str, port: int, timeout: float, sem: asyncio.Semaphore) -
     async with sem:
         writer: asyncio.StreamWriter | None = None
         try:
-            _, writer = await asyncio.wait_for(
-                asyncio.open_connection(host, port), timeout=timeout
-            )
+            _, writer = await asyncio.wait_for(asyncio.open_connection(host, port), timeout=timeout)
             return port
         except (OSError, asyncio.TimeoutError):
             return None

@@ -3,6 +3,7 @@
 Every module speaks in these dataclasses, so the CLI, reporters and tests
 all share one schema. Serialisation lives here, not scattered in reporters.
 """
+
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field

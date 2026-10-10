@@ -1,4 +1,5 @@
 """Host discovery: ARP (LAN), ICMP ping sweep, TCP-probe fallback."""
+
 from __future__ import annotations
 
 import ipaddress
@@ -10,7 +11,7 @@ console = Console()
 
 
 def _scapy():
-    from scapy.all import ARP, Ether, ICMP, IP, sr1, srp
+    from scapy.all import ARP, ICMP, IP, Ether, sr1, srp
 
     return ARP, Ether, ICMP, IP, sr1, srp
 

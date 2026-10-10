@@ -4,6 +4,7 @@ Matches service banners against known-vulnerable version patterns.
 Offline, zero-dependency, and deterministic -- which is exactly why unit
 tests for the vuln pipeline run against this module and not the network.
 """
+
 from __future__ import annotations
 
 import re

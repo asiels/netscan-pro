@@ -7,6 +7,7 @@ Why these choices (design decisions):
   scans are instant and CI/tests never touch the network.
 * Fail-soft: any network/API error degrades to local-DB results only.
 """
+
 from __future__ import annotations
 
 import asyncio

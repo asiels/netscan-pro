@@ -3,6 +3,7 @@
 New engines (UDP, QUIC, custom) are added by decorating a function with
 @register_engine("name") -- no changes to the CLI are required.
 """
+
 from __future__ import annotations
 
 from collections.abc import Callable

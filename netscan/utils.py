@@ -1,4 +1,5 @@
 """Shared utilities: target validation, port-spec parsing, helpers."""
+
 from __future__ import annotations
 
 import ipaddress

@@ -1,4 +1,5 @@
 """Report exporters: terminal table (rich), JSON, CSV, HTML."""
+
 from __future__ import annotations
 
 import csv

@@ -1,13 +1,27 @@
 """Service and OS fingerprinting heuristics (banner + TTL based)."""
+
 from __future__ import annotations
 
 import re
 
 SERVICE_MAP = {
-    21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS",
-    80: "HTTP", 110: "POP3", 143: "IMAP", 443: "HTTPS",
-    445: "SMB", 3306: "MySQL", 3389: "RDP", 5432: "PostgreSQL",
-    5900: "VNC", 6379: "Redis", 8080: "HTTP-Proxy", 27017: "MongoDB",
+    21: "FTP",
+    22: "SSH",
+    23: "Telnet",
+    25: "SMTP",
+    53: "DNS",
+    80: "HTTP",
+    110: "POP3",
+    143: "IMAP",
+    443: "HTTPS",
+    445: "SMB",
+    3306: "MySQL",
+    3389: "RDP",
+    5432: "PostgreSQL",
+    5900: "VNC",
+    6379: "Redis",
+    8080: "HTTP-Proxy",
+    27017: "MongoDB",
 }
 
 # (regex, product name) -- banner signature database
