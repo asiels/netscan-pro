@@ -1,0 +1,1 @@
+"""Core engine primitives: async scanner, models, engine registry."""
